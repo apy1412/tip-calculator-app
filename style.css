@@ -1,0 +1,250 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: black;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 375px;
+  background-color: var(--Light-grayish-cyan);
+}
+
+.white {
+  background-color: var(--White);
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
+  padding: 4rem 3rem;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  margin: 4.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--Grayish-cyan);
+}
+.input {
+  width: 100%;
+  height: 4.5rem;
+  background-color: var(--Very-light-grayish-cyan);
+  border: 0;
+  border-radius: 5px;
+  text-align: right;
+  appearance: textfield;
+  color: var(--Very-dark-cyan);
+  opacity: 1;
+  padding-right: 1.6rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  outline: 0;
+}
+
+.bill-input {
+  background-image: url(images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 1.6rem 50%;
+}
+
+.bill-input:active,
+.bill-input:focus,
+.custom:focus {
+  border: 2px solid var(--Strong-cyan);
+  outline: 0;
+}
+
+.people-input {
+  background-image: url(images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 1.6rem 50%;
+}
+
+.both-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.error {
+  display: none;
+}
+
+.warning > .both-labels > .error {
+  display: flex;
+  color: red;
+}
+
+.warning > .input {
+  outline: 2px solid red;
+}
+
+.input::placeholder {
+  text-align: right;
+  opacity: 1;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--Very-dark-cyan);
+  font-family: "Space Mono", monospace;
+}
+
+.bill,
+.select-tip,
+.people,
+.result {
+  margin-bottom: 3.5rem;
+}
+
+.result {
+  background-color: var(--Very-dark-cyan);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 2rem 2rem;
+}
+.amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.text-main {
+  color: var(--Very-light-grayish-cyan);
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.text-side {
+  color: var(--Grayish-cyan);
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.final-amount {
+  color: var(--Strong-cyan);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+button[type="reset"] {
+  margin: 2rem 2rem 0 2rem;
+  height: 5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--Strong-cyan);
+  text-transform: uppercase;
+  color: var(--Very-dark-cyan);
+  font-weight: 700;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  width: 50%;
+  flex: 1 0 40%;
+  height: 4.5rem;
+  background-color: var(--Very-dark-cyan);
+  border: 0;
+  font-family: "Space Mono", monospace;
+  color: var(--Very-light-grayish-cyan);
+  font-weight: 700;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom {
+  flex: 1 0 40%;
+  width: 50%;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-align: right;
+  appearance: textfield;
+  color: var(--Very-dark-cyan);
+  opacity: 1;
+  font-size: 2rem;
+  background-color: var(--Very-light-grayish-cyan);
+  border: 0;
+  padding-right: 2rem;
+}
+
+.active {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-color: var(--Light-grayish-cyan);
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  .white {
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 3rem 3rem 3rem 3rem;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+  }
+
+  .total {
+    margin-bottom: 15rem;
+  }
+
+  .amount {
+    margin-bottom: 5rem;
+  }
+
+  .btn,
+  .custom {
+    flex: 1 0 25%;
+  }
+
+  .result {
+    margin-bottom: 0;
+  }
+}
